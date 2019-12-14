@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/movieFragment">
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.kucingselfie.navigationtest.ui.movie.list.ListMovieFragment"
+        tools:layout="@layout/list_movie_fragment"
+        android:label="Movie" >
+        <action
+            android:id="@+id/action_movieFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailMovieFragment"
+        android:name="com.kucingselfie.navigationtest.ui.movie.detail.DetailMovieFragment"
+        tools:layout="@layout/detail_movie_fragment"
+        android:label="Detail">
+        <argument
+            android:name="model"
+            app:argType="com.kucingselfie.navigationtest.model.DetailMovie"/>
+    </fragment>
+</navigation>
